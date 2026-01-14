@@ -4,6 +4,6 @@ import venueReducer from './venueSlice';
 
 export default configureStore({
   reducer: {
-    venue: venueReducer,
+      venue: venueReducer,
   },
 });
