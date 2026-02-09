@@ -88,7 +88,7 @@ const ConferenceEvent = () => {
                     <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Unit<</th>
+                            <th>Unit</th>
                             <th>Quantity</th>
                             <th>Cost</th>
                         </tr>
