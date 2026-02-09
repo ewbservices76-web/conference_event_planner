@@ -41,7 +41,14 @@ const ConferenceEvent = () => {
     };
 
     const handleMealSelection = (index) => {
-       
+        const item = mealsItems[index];
+        if (item.selected && item.type === "mealForPeople") {
+            const newNumberOfPeople = item.selected ? numberOfPeople : 0;
+            dispatch(toggleMealSelection(index, newNumberOfPeople));
+        }
+        else {
+            dispatch(toggleMealSelection(index));
+        }
     };
 
     const getItemsFromTotalCost = () => {
@@ -65,10 +72,15 @@ const ConferenceEvent = () => {
               avItems.forEach((item) => {
                 totalCost += item.cost * item.quantity;;
               });
+        } else if (section === "meals") {
+            mealsItems.forEach((item) => {
+                if (item.selected) {
+                    totalCost += item.cost * numberOfPeople;
+                }
+            });
         }
-      
-        return totalCost;
-      };
+    return totalCost;
+    };
     
     const venueTotalCost = calculateTotalCost("venue");
     const avTotalCost = calculateTotalCost("av");
