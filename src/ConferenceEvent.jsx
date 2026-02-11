@@ -29,11 +29,12 @@ const ConferenceEvent = () => {
         dispatch(incrementQuantity(index));
       };
     
-      const handleRemoveFromCart = (index) => {
+    const handleRemoveFromCart = (index) => {
         if (venueItems[index].quantity > 0) {
           dispatch(decrementQuantity(index));
         }
       };
+
     const handleIncrementAvQuantity = (index) => {
         dispatch(incrementAvQuantity(index));
     };
@@ -118,7 +119,6 @@ const ConferenceEvent = () => {
         </>
 
     };
-
 
     const calculateTotalCost = (section) => {
         let totalCost = 0;
