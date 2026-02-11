@@ -35,9 +35,11 @@ const ConferenceEvent = () => {
         }
       };
     const handleIncrementAvQuantity = (index) => {
+        dispatch(incrementAvQuantity(index));
     };
 
     const handleDecrementAvQuantity = (index) => {
+        dispatch(decrementAvQuantity(index));
     };
 
     const handleMealSelection = (index) => {
@@ -220,14 +222,14 @@ const ConferenceEvent = () => {
                                                 </button>
                                 </div>
         )}
-        </div> //className="button_container"   
+        </div> {/*className="button_container"*/}   
     </div> //className="venue_selection"
 ))}
-                                </div> //id="venue_container" className="venue_container container_main"
+                                </div> {/*id="venue_container" className="venue_container container_main"*/}
 
                                     <div className="total_cost">Total Cost: ${venueTotalCost}</div>
                                 
-                                </div>  //className="items-information"
+                                </div>  {/*className="items-information"*/}
               
               
                                                     {/*Necessary Add-ons*/}
@@ -237,7 +239,7 @@ const ConferenceEvent = () => {
                                     </div>
                                 <div className="addons_selection">
                                             {avItems.map((item, index) => ( 
-                                <div className="av data venue main" key={index}>
+                                <div className="av_data venue_main" key={index}>
                                     <div className="img">
                                         <img src={item.img} alt={item.name} />
                                     </div>
@@ -255,13 +257,13 @@ const ConferenceEvent = () => {
                                         onClick={() => handleIncrementAvQuantity(index)}> 
                                         &#43; 
                                     </button>
-                                </div> //className="addons_btn"
-                                </div> //className="av data venue main"
-                                            ))}
+                                </div> {/*className="addons_btn"*/}
+                                </div> 
+                                                                        ))}
                                  
-                                </div> //className="addons_selection"
-                                    <div className="total_cost">Total Cost: {avTotalCost} </div>
-                                </div>  //id="addons" className="venue_container container_main"
+                                </div> {/*className="addons_selection"*/}
+                                    <div className="total_cost">Total Cost: ${avTotalCost} </div>
+                                </div> {/*id="addons" className="venue_container container_main" */}
 
                                                   {/* Meal Section */}
 
@@ -286,13 +288,13 @@ const ConferenceEvent = () => {
                                             <div className="meal_cost"> ${item.cost} </div>
                                         </div>  //className="meal_item"
                                     ))}
-                                </div>  //className="meal_selection"
-                                </div> //id="meals" className="venue_container container_main"
+                                </div>  {/*className="meal_selection"*/}
+                                </div> {/*id="meals" className="venue_container container_main"*/}
 
                                 
                                 <div className="total_cost">Total Cost: {mealsTotalCost} </div>
 
-        </div> //id="main_container"    
+        </div>    
           
                     ) : (
                         <div className="total_amount_detail">
@@ -301,7 +303,7 @@ const ConferenceEvent = () => {
                         </div> 
                     )
                 }
-</div>  //className="main_container"
+</div>  {/*className="main_container"*/}
        </>
 
     );
